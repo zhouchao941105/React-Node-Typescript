@@ -7,7 +7,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Provider><App /></Provider>,
+  <Provider store={} history={BroswerHistory}><App /></Provider>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
