@@ -17,6 +17,9 @@
     ],
     "object-literal-sort-keys": [
       false
+    ],
+    "no-vars-requires": [
+      false
     ]
   }
 }

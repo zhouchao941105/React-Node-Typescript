@@ -5,8 +5,19 @@ import { Layout } from 'antd'
 import './App.css';
 
 import logo from './logo.svg';
+import net from './net/net'
 
 class App extends React.Component {
+  public state = {
+    name: 'zhou'
+  }
+  public componentDidMount() {
+    net.get('/list').then((res: any) => {
+      this.setState({
+        name: res
+      })
+    })
+  }
   public render() {
     return (
       <div className="App">
@@ -14,10 +25,11 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <p>{this.state.name}</p>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Layout></Layout>
+        <Layout>hahah</Layout>
       </div>
     );
   }

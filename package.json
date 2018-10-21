@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.32",
+    "@types/react-redux": "^6.0.9",
     "antd": "^3.10.0",
     "axios": "^0.18.0",
     "koa": "^2.5.3",
@@ -13,11 +15,12 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-scripts-ts": "3.1.0",
+    "redux": "^4.0.1",
     "redux-saga": "^0.16.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "server": "node server/server.ts",
+    "server": "node server/server.js",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
@@ -28,5 +31,6 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.8",
     "typescript": "^3.1.1"
-  }
+  },
+  "proxy": "http://127.0.0.1:9090"
 }

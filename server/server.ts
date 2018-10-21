@@ -1,10 +1,9 @@
-const koa = require('koa');
-const Router = require('koa-router')()
-var app = new koa()
-Router.get('/list', async (ctx, next) => {
+import * as koa from 'koa';
+import * as R from 'koa-router'
+const Router = new R()
+const app = new koa()
+Router.get('/list', async (ctx: any, next: any) => {
     ctx.body = 'hello'
 })
 app.use(Router.routes())
-app.listen(9090, (err, res) => {
-    console.log('ok')
-})
+app.listen(9090)
