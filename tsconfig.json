@@ -31,5 +31,6 @@
     "jest",
     "src/setupTests.ts"
   ],
+  "skipLibCheck": true,
   "watch": true
 }
