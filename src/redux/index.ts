@@ -1,5 +1,8 @@
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import sagaIns from '../saga/index'
+const sagaMiddleware = createSagaMiddleware()
 const store = createStore((state, action) => {
     switch (action.type) {
         case 'LOADING':
@@ -14,6 +17,7 @@ const store = createStore((state, action) => {
             }
         default: return state
     }
-})
+}, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(sagaIns)
 store.subscribe(() => console.log(store.getState()))
 export default store

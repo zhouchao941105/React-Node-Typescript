@@ -23,12 +23,13 @@ class App extends React.Component<IAppProps, IAppState> {
   }
 
   public componentDidMount() {
+    console.log('a')
     this.props.dispatch({ type: 'LOADING' })
-    net.get('/list').then((res: any) => {
-      this.setState({
-        name: res
-      })
-    })
+    // net.get('/list').then((res: any) => {
+    //   this.setState({
+    //     name: res
+    //   })
+    // })
   }
   public render() {
     return (
