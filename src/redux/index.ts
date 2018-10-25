@@ -1,6 +1,6 @@
 
 import { createStore } from 'redux';
-export default createStore((state, action) => {
+const store = createStore((state, action) => {
     switch (action.type) {
         case 'LOADING':
             return {
@@ -15,3 +15,5 @@ export default createStore((state, action) => {
         default: return state
     }
 })
+store.subscribe(() => console.log(store.getState()))
+export default store

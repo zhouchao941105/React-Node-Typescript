@@ -1,17 +1,29 @@
+/* eslint-disable no-debugger */
 import * as React from 'react';
 
 import { Layout } from 'antd'
-
+import { connect } from 'react-redux';
 import './App.css';
 
 import logo from './logo.svg';
 import net from './net/net'
-
-class App extends React.Component {
+interface IAppProps {
+  loading: boolean,
+  dispatch: any
+}
+interface IAppState {
+  name: string
+}
+class App extends React.Component<IAppProps, IAppState> {
   public state = {
     name: 'zhou'
   }
+  public constructor(props: any) {
+    super(props)
+  }
+
   public componentDidMount() {
+    this.props.dispatch({ type: 'LOADING' })
     net.get('/list').then((res: any) => {
       this.setState({
         name: res
@@ -26,6 +38,8 @@ class App extends React.Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p>{this.state.name}</p>
+
+        <p>{`${this.props.loading}`}</p>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -34,5 +48,9 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
+const mapStateToProps = (state = { loading: false }) => {
+  return {
+    loading: state.loading
+  }
+}
+export default connect(mapStateToProps)(App);
