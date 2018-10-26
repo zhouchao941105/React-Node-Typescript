@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './App.css';
 
 import logo from './logo.svg';
-import net from './net/net'
+// import net from './net/net'
 interface IAppProps {
   loading: boolean,
   dispatch: any

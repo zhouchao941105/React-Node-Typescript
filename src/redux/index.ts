@@ -2,22 +2,9 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import sagaIns from '../saga/index'
+import reducer from './reducer';
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore((state, action) => {
-    switch (action.type) {
-        case 'LOADING':
-            return {
-                ...state,
-                loading: true
-            }
-        case 'STOPLOADING':
-            return {
-                ...state,
-                loading: false
-            }
-        default: return state
-    }
-}, applyMiddleware(sagaMiddleware))
+const store = createStore(reducer, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(sagaIns)
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState())) // 当action.type没有match到，进入default分支，这个监听依然会被触发
 export default store
