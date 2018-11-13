@@ -1,8 +1,9 @@
 /* eslint-disable no-debugger */
 import * as React from 'react';
-
+import { bindActionCreators } from 'redux'
 import { Layout } from 'antd'
 import { connect } from 'react-redux';
+import { listActions } from ''
 import './App.css';
 
 import logo from './logo.svg';
@@ -54,4 +55,8 @@ const mapStateToProps = (state = { loading: false }) => {
     loading: state.loading
   }
 }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, dispatch => {
+  return {
+    listActions: bindActionCreators(listActions, dispatch)
+  }
+})(App);
