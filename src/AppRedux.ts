@@ -6,7 +6,7 @@ const LOADING = "LOADING"
 const LOADINGFI = "LOADINGFI"
 export function loaduser() {
     return {
-        types: [LOADING, LOADINGFI]
+        type: LOADINGFI
     }
 }
 function reducer(state = initState, action: any) {

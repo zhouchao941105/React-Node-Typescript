@@ -10,7 +10,8 @@ import logo from './logo.svg';
 // import net from './net/net'
 interface IAppProps {
   loading: boolean,
-  dispatch: any
+  dispatch: any,
+  listActions: any
 }
 interface IAppState {
   name: string
@@ -25,6 +26,8 @@ class App extends React.Component<IAppProps, IAppState> {
 
   public componentDidMount() {
     console.log('a')
+    console.log(this.props)
+    this.props.listActions()
     // this.props.dispatch({ type: 'LOADING' })
     // net.get('/list').then((res: any) => {
     //   this.setState({
@@ -50,12 +53,11 @@ class App extends React.Component<IAppProps, IAppState> {
     );
   }
 }
-const mapStateToProps = (state = { loading: false }) => {
+export default connect((state: any = { loading: false }) => {
   return {
     loading: state.loading
   }
-}
-export default connect(mapStateToProps, dispatch => {
+}, dispatch => {
   return {
     listActions: bindActionCreators(loaduser, dispatch)
   }
