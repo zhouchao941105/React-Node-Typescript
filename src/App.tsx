@@ -3,7 +3,7 @@ import * as React from 'react';
 import { bindActionCreators } from 'redux'
 import { Layout } from 'antd'
 import { connect } from 'react-redux';
-import { listActions } from ''
+import { loaduser } from './AppRedux'
 import './App.css';
 
 import logo from './logo.svg';
@@ -25,7 +25,7 @@ class App extends React.Component<IAppProps, IAppState> {
 
   public componentDidMount() {
     console.log('a')
-    this.props.dispatch({ type: 'LOADING' })
+    // this.props.dispatch({ type: 'LOADING' })
     // net.get('/list').then((res: any) => {
     //   this.setState({
     //     name: res
@@ -57,6 +57,6 @@ const mapStateToProps = (state = { loading: false }) => {
 }
 export default connect(mapStateToProps, dispatch => {
   return {
-    listActions: bindActionCreators(listActions, dispatch)
+    listActions: bindActionCreators(loaduser, dispatch)
   }
 })(App);
