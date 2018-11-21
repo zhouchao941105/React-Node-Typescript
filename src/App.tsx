@@ -18,16 +18,16 @@ interface IAppState {
 }
 class App extends React.Component<IAppProps, IAppState> {
   public state = {
-    name: 'zhou'
+    name: 'zho'
   }
   public constructor(props: any) {
     super(props)
   }
 
   public componentDidMount() {
-    console.log('a')
     console.log(this.props)
     this.props.listActions()
+
     // this.props.dispatch({ type: 'LOADING' })
     // net.get('/list').then((res: any) => {
     //   this.setState({
@@ -53,9 +53,9 @@ class App extends React.Component<IAppProps, IAppState> {
     );
   }
 }
-export default connect((state: any = { loading: false }) => {
+export default connect((state: any = { appreducer: { loading: false } }) => {
   return {
-    loading: state.loading
+    loading: state.appreducer.loading
   }
 }, dispatch => {
   return {

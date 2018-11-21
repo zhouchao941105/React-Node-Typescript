@@ -1,15 +1,5 @@
-export default (state: any, action: any) => {
-    switch (action.type) {
-        case 'LOADING':
-            return {
-                ...state,
-                loading: true
-            }
-        case 'STOPLOADING':
-            return {
-                ...state,
-                loading: false
-            }
-        default: return state
-    }
-}
+import { combineReducers } from 'redux';
+import appreducer from '../AppRedux'
+export default combineReducers({
+    appreducer
+})

@@ -17,13 +17,15 @@ function reducer(state = initState, action: any) {
                 loading: true,
                 name: 'zhou'
             }
+            break;
         }
         case LOADINGFI: {
             return {
                 ...state,
-                loading: false,
+                loading: 'diulei',
                 name: 'chao'
             }
+            break;
         }
         default:
             return state
