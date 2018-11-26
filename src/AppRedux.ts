@@ -17,7 +17,6 @@ function reducer(state = initState, action: any) {
                 loading: true,
                 name: 'zhou'
             }
-            break;
         }
         case LOADINGFI: {
             return {
@@ -25,7 +24,6 @@ function reducer(state = initState, action: any) {
                 loading: 'diulei',
                 name: 'chao'
             }
-            break;
         }
         default:
             return state
