@@ -1,6 +1,6 @@
 const initState = {
     loading: true,
-    name: ''
+    name: 'zc'
 }
 const LOADING = "LOADING"
 const LOADINGFI = "LOADINGFI"

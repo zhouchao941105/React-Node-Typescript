@@ -21,6 +21,7 @@
     "no-vars-requires": [
       false
     ],
-    "no-console": false
+    "no-console": false,
+    "no-debugger": false
   }
 }

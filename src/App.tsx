@@ -23,12 +23,11 @@ class App extends React.Component<IAppProps, IAppState> {
   // }
   public constructor(props: any) {
     super(props)
-    this.getName = this.getName.bind(this)
+    // this.getName = this.getName.bind(this)
   }
 
   public componentDidMount() {
     console.log(this.props)
-
     // this.props.dispatch({ type: 'LOADING' })
     // net.get('/list').then((res: any) => {
     //   this.setState({
@@ -36,7 +35,8 @@ class App extends React.Component<IAppProps, IAppState> {
     //   })
     // })
   }
-  public getName() {
+
+  public getName = () => {
     this.props.listActions()
   }
   public render() {
@@ -57,7 +57,7 @@ class App extends React.Component<IAppProps, IAppState> {
     );
   }
 }
-export default connect((state: any = { appreducer: { loading: false, name: 'zhou' } }) => {
+export default connect((state: any) => {
   return {
     loading: state.appreducer.loading,
     name: state.appreducer.name
