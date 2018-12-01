@@ -35,7 +35,6 @@ class App extends React.Component<IAppProps, IAppState> {
     //   })
     // })
   }
-
   public getName = () => {
     this.props.listActions()
   }

@@ -2,12 +2,12 @@ import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 function* foo(action: any) {
     try {
         const data = yield call(() => fetch('/list'))
-        yield put({ type: 'SUCCESS', data })
+        yield put({ type: 'LOADUSERSUCC', data })
     } catch (e) {
-        yield put({ type: 'FAIL', message: e.message })
+        yield put({ type: 'LOADUSERFAIL', message: e.message })
     }
 }
 function* firstSaga() {
-    yield takeEvery("LOADING", foo)
+    yield takeEvery("LOADUSER", foo)
 }
 export default firstSaga
