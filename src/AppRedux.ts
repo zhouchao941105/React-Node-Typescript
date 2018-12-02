@@ -17,8 +17,7 @@ function reducer(state = initState, action: any) {
             return {
                 ...state,
                 loading: true,
-                name: 'zhou',
-                hehe: action.payload
+                name: action.data
             }
         }
         // case LOADUSER: {
@@ -31,7 +30,7 @@ function reducer(state = initState, action: any) {
         case LOADUSERFAIL: {
             return {
                 ...state,
-                loading: '🌶',
+                loading: action.message,
                 name: '🐔'
             }
         }
