@@ -1,23 +1,32 @@
 const initState = {
     loading: true,
-    name: 'zc'
+    name: 'zc',
+    data: {},
+    follow: []
 }
 const LOADUSER = "LOADUSER"
 const LOADUSERSUCC = "LOADUSERSUCC"
 const LOADUSERFAIL = "LOADUSERFAIL"
-
+const LOADFOLLOWER = "LOADFOLLOWER"
+const LOADFOLLOWERSUCC = "LOADFOLLOWERSUCC"
 export function loaduser() {
     return {
         type: LOADUSER
     }
 }
+// export function loadFollower() {
+//     return {
+//         type: LOADFOLLOWER,
+//         url:''
+//     }
+// }
 function reducer(state = initState, action: any) {
     switch (action.type) {
         case LOADUSERSUCC: {
             return {
                 ...state,
                 loading: true,
-                name: action.data
+                data: action.data
             }
         }
         // case LOADUSER: {
@@ -32,6 +41,12 @@ function reducer(state = initState, action: any) {
                 ...state,
                 loading: action.message,
                 name: '🐔'
+            }
+        }
+        case LOADFOLLOWERSUCC: {
+            return {
+                ...state,
+                follow: action.data
             }
         }
         default:
