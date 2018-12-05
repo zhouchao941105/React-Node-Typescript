@@ -13,7 +13,6 @@ function* loadUser() {
 }
 function* follow(action: any) {
     try {
-        debugger
         const data = yield call(() => fetch(action.url).then(res => res.json()))
         yield put({ type: 'LOADFOLLOWERSUCC', data })
     } catch (e) {

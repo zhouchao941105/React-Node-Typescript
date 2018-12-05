@@ -68,12 +68,8 @@ class App extends React.Component<IAppProps, IAppState> {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p>{this.props.name}</p>
-        <Button onClick={this.getName} >Dispatch</Button>
+        <Button onClick={this.getName} >Dispatch Myself</Button>
         {/* <Button onClick={this.getFollow}>follower</Button> */}
-        <p>{`${this.props.loading}`}</p>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <Card>
           <Meta avatar={<Avatar src={this.props.data.avatar_url} />} title="avatar" />
         </Card>
