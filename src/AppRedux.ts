@@ -11,7 +11,8 @@ const LOADFOLLOWER = "LOADFOLLOWER"
 const LOADFOLLOWERSUCC = "LOADFOLLOWERSUCC"
 export function loaduser() {
     return {
-        type: LOADUSER
+        type: LOADUSER,
+        url: 'zhouchao941105'
     }
 }
 // export function loadFollower() {

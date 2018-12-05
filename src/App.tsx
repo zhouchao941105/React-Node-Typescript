@@ -41,6 +41,12 @@ class App extends React.Component<IAppProps, IAppState> {
   public getName = () => {
     this.props.listActions()
   }
+  public getInfo = (src: any) => {
+    this.props.dispatch({
+      type: 'LOADUSER',
+      url: src.login
+    })
+  }
   public getFollow = () => {
     console.log(this.props)
     this.props.dispatch({
@@ -51,7 +57,8 @@ class App extends React.Component<IAppProps, IAppState> {
   public renderList = (item: any) => (
     <List.Item>
       {/* <List.Item.Meta */}
-      {item}
+      {item.login}
+      <Button onClick={this.getInfo.bind(this, item)}>{item.login}</Button>
     </List.Item>)
   public render() {
     return (
@@ -62,7 +69,7 @@ class App extends React.Component<IAppProps, IAppState> {
         </header>
         <p>{this.props.name}</p>
         <Button onClick={this.getName} >Dispatch</Button>
-        <Button onClick={this.getFollow}>follower</Button>
+        {/* <Button onClick={this.getFollow}>follower</Button> */}
         <p>{`${this.props.loading}`}</p>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
