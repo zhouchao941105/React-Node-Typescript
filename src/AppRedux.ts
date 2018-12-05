@@ -9,10 +9,10 @@ const LOADUSERSUCC = "LOADUSERSUCC"
 const LOADUSERFAIL = "LOADUSERFAIL"
 const LOADFOLLOWER = "LOADFOLLOWER"
 const LOADFOLLOWERSUCC = "LOADFOLLOWERSUCC"
-export function loaduser() {
+export function loaduser(user: string) {
     return {
         type: LOADUSER,
-        url: 'zhouchao941105'
+        url: user
     }
 }
 // export function loadFollower() {

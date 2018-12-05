@@ -39,13 +39,15 @@ class App extends React.Component<IAppProps, IAppState> {
     // })
   }
   public getName = () => {
-    this.props.listActions()
+    console.log('a')
+    this.props.listActions()()
   }
   public getInfo = (src: any) => {
-    this.props.dispatch({
-      type: 'LOADUSER',
-      url: src.login
-    })
+    // this.props.dispatch({
+    //   type: 'LOADUSER',
+    //   url: src.login
+    // })
+    this.props.listActions(src.login)()
   }
   public getFollow = () => {
     console.log(this.props)
@@ -87,7 +89,7 @@ export default connect((state: any) => {
   }
 }, dispatch => {
   return {
-    listActions: bindActionCreators(loaduser, dispatch),
+    listActions: (user: string = 'zhouchao941105') => bindActionCreators(loaduser.bind(null, user), dispatch),
     dispatch
     // getFollewed:bindActionCreators(loadFollower,dispatch)
   }
