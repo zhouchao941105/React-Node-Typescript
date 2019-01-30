@@ -3,6 +3,7 @@ function* foo(action: any) {
     try {
         const data = yield call(() => fetch(`https://api.github.com/users/${action.url}`).then(res => res.json()))
         yield put({ type: 'LOADUSERSUCC', data })
+        // 获取到数据后，直接请求follower列表
         yield put({ type: 'LOADFOLLOWER', url: data.followers_url })
     } catch (e) {
         yield put({ type: 'LOADUSERFAIL', message: e.message })
