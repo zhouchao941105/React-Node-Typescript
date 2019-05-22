@@ -5,5 +5,6 @@ const app = new koa()
 Router.get('/list', async (ctx: any, next: any) => {
     ctx.body = '🌶🐔'
 })
-app.use(Router.routes())
+app.use(Router.routes());
+app.use(Router.allowedMethods());
 app.listen(9090)
