@@ -5,7 +5,7 @@ import { Layout, Button, Card, Icon, Avatar, List } from 'antd'
 import { connect } from 'react-redux';
 import { loaduser } from './AppRedux'
 import './App.css';
-
+import Test from './biz/hoc/index.jsx'
 import logo from './logo.svg';
 const { Meta } = Card;
 // import net from './net/net'
@@ -69,6 +69,7 @@ class App extends React.Component<IAppProps, IAppState> {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Test />
         <p>{this.props.name}</p>
         <Button onClick={this.getName} >Dispatch Myself</Button>
         {/* <Button onClick={this.getFollow}>follower</Button> */}
